@@ -112,7 +112,7 @@ Schedule Trigger
 **1. Clone this repo**
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/orders-dq-monitor
+git clone https://github.com/Bechir02/orders-dq-monitor
 ```
 
 **2. Import the workflow into n8n**
