@@ -1,7 +1,7 @@
 # 🔍 Orders Data Quality Monitor
 ### n8n · Google Sheets · OpenRouter (LLM) · Gmail · Slack
 
-> An automated hybrid data quality monitoring pipeline that validates order records daily, generates AI-powered incident summaries, and delivers smart alerts — all for $0/month.
+> An automated hybrid data quality monitoring pipeline that validates order records daily, generates AI-powered incident summaries, and delivers smart alerts all for $0/month.
 
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![n8n](https://img.shields.io/badge/Built%20with-n8n-orange)
@@ -21,16 +21,31 @@ Every business that receives order data faces the same silent problem:
 
 Manual checking is slow, inconsistent, and gets skipped on busy days. Expensive enterprise tools are overkill for most teams.
 
-**This workflow automates the entire process — detects issues, explains them in plain English, and alerts the right people automatically.**
+**This workflow automates the entire process from detects issues, explains them in plain English to alerts the right people automatically.**
 
 ---
 
+## 📁 Repository Structure
+
+```
+orders-dq-monitor/
+├── 📄 workflow.json          ← n8n workflow export
+├── 📖 README.md              ← this file
+├── 📊 sample-data/
+│   └── orders_sample.xlsx    ← test dataset with intentional bad rows
+└── 📸 screenshots/
+    ├── canvas.png            ← full workflow canvas
+    ├── slack-alert.png       ← sample Slack notification
+    └── email-alert.png       ← sample email alert
+```
+
+---
 ## ✨ What it does
 
 Runs on a daily schedule and:
 
 1. 📥 Reads all orders from a Google Sheet
-2. 🕐 Checks data freshness — flags if no new orders in 24 hours
+2. 🕐 Checks data freshness and flags if no new orders in 24 hours
 3. ✅ Runs 5 deterministic validation rules on every row
 4. 🔀 Routes through 3 branches based on severity
 5. 🤖 Calls an LLM via OpenRouter to write a business-friendly summary
@@ -102,23 +117,6 @@ Runs on a daily schedule and:
 
 ---
 
-## 🤖 The Hybrid Approach
-
-Most data quality tools are either:
-- **Fully manual** — someone checks a spreadsheet
-- **Fully rule-based** — you get a wall of technical errors nobody understands
-
-This workflow is **hybrid**:
-
-| Layer | Type | What it does |
-|---|---|---|
-| Validation engine | Deterministic | Catches exact known problems reliably |
-| LLM layer | AI-powered | Translates failures into plain English a manager can act on |
-
-The same pattern is used by enterprise data observability platforms like Monte Carlo and Great Expectations — built here from scratch for $0/month.
-
----
-
 ## 🛠️ Tech Stack
 
 | Component | Tool | Cost |
@@ -174,7 +172,7 @@ The same pattern is used by enterprise data observability platforms like Monte C
 **1. Clone this repo**
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/orders-dq-monitor
+git clone https://github.com/Bechir02/orders-dq-monitor
 cd orders-dq-monitor
 ```
 
@@ -275,54 +273,6 @@ This catches silent pipeline failures where data stops flowing without anyone no
 - [ ] 📊 Live HTML dashboard via n8n webhook trigger
 - [ ] 🔔 PagerDuty or OpsGenie integration for critical alerts
 
----
-
-## 💼 Real World Applications
-
-| Industry | Use Case |
-|---|---|
-| 🛒 E-commerce | Validate orders before they reach fulfillment systems |
-| 💰 Finance | Check transaction records before end-of-day reporting |
-| 👥 HR | Validate employee data imports before payroll runs |
-| 🚚 Logistics | Catch bad shipment dates before dispatch |
-| 🏥 Healthcare | Flag missing patient fields before record submission |
-| 🔍 Investigations | Validate entity records before they enter research pipelines |
-
----
-
-## 🧑‍💻 Why I Built This
-
-Trade data investigations rely heavily on clean entity records — missing IDs, duplicate entries, and bad date formats are exactly the kind of noise that slows down manual research workflows.
-
-This project is a proof of concept for automating the data validation layer that sits before every investigation report — catching bad records early, before they corrupt downstream analysis.
-
----
-
-## 💡 LinkedIn Bullet Points
-
-> Copy these directly for your LinkedIn profile or posts
-
-- 🔍 Built a self-hosted data quality monitoring pipeline using n8n, Google Sheets, and OpenRouter — automatically detects bad records, generates AI-written incident summaries, and delivers alerts via email and Slack with zero manual intervention
-
-- 🤖 Designed a hybrid deterministic + LLM workflow that separates rule-based validation from natural language reporting — keeping costs at $0 while making quality alerts readable by non-technical stakeholders
-
-- 📊 Implemented threshold-based alert routing with three execution branches — clean runs log silently, minor issues are recorded without noise, critical failures trigger full AI-powered incident reports delivered to email and Slack
-
----
-
-## 📁 Repository Structure
-
-```
-orders-dq-monitor/
-├── 📄 workflow.json          ← n8n workflow export
-├── 📖 README.md              ← this file
-├── 📊 sample-data/
-│   └── orders_sample.xlsx    ← test dataset with intentional bad rows
-└── 📸 screenshots/
-    ├── canvas.png            ← full workflow canvas
-    ├── slack-alert.png       ← sample Slack notification
-    └── email-alert.png       ← sample email alert
-```
 
 ---
 
@@ -331,15 +281,9 @@ orders-dq-monitor/
 **Becher Zribi**
 Automation Engineer · Data Quality · n8n · AI Workflows
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/YOUR_HANDLE)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/YOUR_USERNAME)
-
----
-
 ## ⭐ If this project helped you
 
 Give it a star on GitHub — it helps others find it and motivates continued development.
 
 ---
 
-*Built with n8n, curiosity, and zero budget.*
