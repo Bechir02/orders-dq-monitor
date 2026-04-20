@@ -30,7 +30,7 @@ Manual checking is slow, inconsistent, and gets skipped on busy days. Expensive 
 ```
 orders-dq-monitor/
 ├── 📄 workflow.json          ← n8n workflow export
-├── 📖 README.md              ← this file
+├── 📖 README.md              
 ├── 📊 sample-data/
 │   └── orders_sample.xlsx    ← test dataset with intentional bad rows
 └── 📸 screenshots/
