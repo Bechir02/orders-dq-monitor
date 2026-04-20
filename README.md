@@ -37,6 +37,7 @@ orders-dq-monitor/
     ├── canvas.png            ← full workflow canvas
     ├── slack-alert.png       ← sample Slack notification
     └── email-alert.png       ← sample email alert
+    └── audit-log.png         ← Audit Log Tab
 ```
 
 ---
